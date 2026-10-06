@@ -1,13 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\QouteController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\DoaHarianController;
+use App\Http\Controllers\QuranController;
+use App\Http\Controllers\JadwalController;
+
 use League\CommonMark\Extension\SmartPunct\Quote;
 
 Route::resource('/', QouteController::class);
 
+Route::resource('/doa', DoaHarianController::class);
+
+Route::resource('/jadwal', JadwalController::class);
+
 Route::resource('/home', RecipeController::class);
+
+Route::resource('quran', QuranController::class);
 
 Route::get('/produk/2', function () {
     return response()->json([
@@ -93,5 +104,3 @@ Route::get('/products', function () {
         ]
     ]);
 });
-
-Route::resource('/qoutes', QouteController::class);
