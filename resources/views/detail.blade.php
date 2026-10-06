@@ -30,6 +30,9 @@
     <nav class="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800/80">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
             <a href="{{ route('quran.index') }}" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300 group-hover:text-amber-300 group-hover:border-neutral-700 transition-colors">
+                    <i class="fa-solid fa-moon text-sm"></i>
+                </div>
                 <span class="font-fraunces font-semibold text-base sm:text-lg text-white tracking-tight">E-Quran</span>
             </a>
 
@@ -45,6 +48,10 @@
                 <a href="{{ route('jadwal.index') }}" class="px-3 sm:px-4 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-colors flex items-center gap-2 {{ request()->routeIs('jadwal.*') ? 'bg-neutral-800 text-white border border-neutral-700' : 'text-neutral-400 hover:text-white hover:bg-neutral-900' }}">
                     <i class="fa-solid fa-clock text-xs"></i>
                     <span class="hidden sm:inline">Jadwal Sholat</span>
+                </a>
+                <a href="{{ url('/') }}" class="px-3 sm:px-4 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-colors flex items-center gap-2 {{ (request()->is('/') || request()->routeIs('qoutes.*')) ? 'bg-neutral-800 text-white border border-neutral-700' : 'text-neutral-400 hover:text-white hover:bg-neutral-900' }}">
+                    <i class="fa-solid fa-quote-left text-xs"></i>
+                    <span class="hidden sm:inline">Quotes</span>
                 </a>
             </div>
         </div>
